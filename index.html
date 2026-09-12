@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tailoring Order Desk</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container">
+            <nav class="nav">
+                <div>
+                    <h1>Tailoring Order Desk</h1>
+                    <p>Manage customer orders and collection status.</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="container">
+
+            <!-- Summary -->
+            <section class="summary" aria-label="Order summary">
+
+                <div class="stat">
+                    <span>Total Orders</span>
+                    <strong id="total-orders">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Pending Orders</span>
+                    <strong id="pending-orders">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Total Agreed Price</span>
+                    <strong id="total-price">0 AFN</strong>
+                </div>
+
+            </section>
+
+
+            <!-- Search and Filter -->
+            <section class="panel">
+
+                <h2>Search Orders</h2>
+
+                <div class="toolbar">
+
+                    <div class="field">
+                        <label for="search">
+                            Search Customer
+                        </label>
+
+                        <input
+                            type="search"
+                            id="search"
+                            placeholder="Enter customer name..."
+                        >
+                    </div>
+
+
+                    <div class="field">
+                        <label for="status-filter">
+                            Status
+                        </label>
+
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Ready">Ready</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Main Workspace -->
+            <section class="workspace">
+
+                <!-- Orders -->
+                <div class="main-panel">
+
+                    <div class="panel">
+
+                        <h2>Orders</h2>
+
+                        <div class="table-wrap">
+
+                            <table>
+
+                                <caption>
+                                    Customer tailoring orders
+                                </caption>
+
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Garment</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="orders-table-body">
+
+                                    <!-- JavaScript will add orders here -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <!-- Show this when there are no results -->
+                        <div
+                            id="empty-state"
+                            class="empty-state"
+                            hidden
+                        >
+                            <p>No orders found.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add Order -->
+                <aside class="side-panel">
+
+                    <div class="panel">
+
+                        <h2>Add Order</h2>
+
+                        <form id="order-form">
+
+                            <div class="field">
+
+                                <label for="customer">
+                                    Customer Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customer"
+                                    name="customer"
+                                    minlength="2"
+                                    maxlength="80"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="garment">
+                                    Garment
+                                </label>
+
+                                <select
+                                    id="garment"
+                                    name="garment"
+                                    required
+                                >
+                                    <option value="">
+                                        Select garment
+                                    </option>
+
+                                    <option value="Shirt">
+                                        Shirt
+                                    </option>
+
+                                    <option value="Trousers">
+                                        Trousers
+                                    </option>
+
+                                    <option value="Dress">
+                                        Dress
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="price">
+                                    Price (AFN)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="price"
+                                    name="price"
+                                    min="1"
+                                    max="10000"
+                                    step="1"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="actions">
+
+                                <button type="submit">
+                                    Add Order
+                                </button>
+
+                                <button
+                                    type="reset"
+                                    class="btn-secondary"
+                                >
+                                    Clear
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <p>Tailoring Order Desk &copy; 2026</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
