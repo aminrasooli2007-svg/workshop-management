@@ -1,5 +1,5 @@
 # 🛠️ Workshop Management
-
+![Project Screenshot](Shop.png)
 A JavaScript-based workshop management application for managing products and displaying product prices in a simple and interactive interface.
 
 ## ✨ Features
